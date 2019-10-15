@@ -15,19 +15,98 @@
 <html>
   <style>
 
+  /*Smaller devices CSS*/
+
   #flex_container{
+    /*Ensure the main container uses 100% of the vdu*/
     max-width:  100%;
     max-height: 100%;
+
+    /*set a background color*/
+    background-color:  #F0F1FA;
+
+    border: 1px;
+    border-radius: 5px;
+
+    /*
+    *     Use a flex box to hold the #navbar and #main-doc in columns
+    */
+
+    /*display: flex - Turn on flex*/
+    display: flex;
+    /*Flex-direction */
+    flex-direction: column;
+    /*Flex-wrap -Nowrap = flex will try and fit everything onto one line */
+    flex-wrap: nowrap;
+    /*Justy the content on the main axis with space between*/
+    justify-content: space-between;
+    /*Alignt content on the cross axis in the center of the flex box*/
+    Align-content: center;
   }
+
+
+
 
     /*user story 1 - main-doc id */
     #main-doc{
 
+      /*Flex Box Item settings*/
+      /*Order - Second item displayed*/
+      order: 2;
+      /* Flex Grow */
+      flex-grow: 1;
+      /*Flex-shrink */
+      flex-shrink: 1;
+      /*Use 80% of the space before distruting the rest*/
+      flex-basis: 80%;
+      /*Ensure the this item is aligned to the right of the flex box*/
+      align-self: center;
+
+      /*Always ensure there is some padding on the top*/
+      padding-top: 45%;
+
+
+      /*Ensure the max width is only 80% of the container at most*/
+      max-width: 100%;
+
+      /*bit of a margin*/
+      margin: 5px;
+      /*top margin to look good*/
+      margin-top: 45%;
     }
 
     /*user story 2 -scection id */
     .main-section{
+      background-color: #DBF2D9;
 
+
+      /*set a nice border*/
+      border: 1px;
+      border-radius: 5px;
+
+
+    }
+
+    /*Style for the header tags*/
+    header{
+      /*set a nice background color*/
+      background-color:  #5964C5;
+
+      /*set a nice border*/
+      border: 2px;
+      border-style: solid;
+      border-color: #282F71;
+      border-radius: 5px;
+
+      /*text color*/
+      color:  white;
+      /*padding*/
+
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: bold;
+      margin: 2px;
+      padding: 5px;
     }
 
     /*User story 4 - headings*/
@@ -86,13 +165,30 @@
     /*User story #8*/
     #navbar{
         margin: 2px;
+
         padding: 5px;
         text-align: center;
-        height: 90%;
+        height: 40%;
 
-        border-color: black;
-        border: 3px;
-        border-style: solid;
+        background-color: #DBF2D9;
+
+        /*set a nice border*/
+        border: 1px;
+        border-radius: 5px;
+
+        /*Flex Box item settings for the flex box container in #nav bar/*
+        /*Order - First item*/
+        order: 1;
+        /* Flex Grow */
+        flex-grow: 1;
+        /*Flex-shrink */
+        flex-shrink: 1;
+        /*Only use 80% of the space available*/
+        flex-basis: 20%;
+        /*align to the center*/
+        align-self: center;
+
+        position: fixed;
 
     }
 
@@ -183,6 +279,8 @@
           align-items:  center;
           /*Align content to the center*/
           Align-content: center;
+
+          height: 95%;
         }
 
         #nav-link{
@@ -245,8 +343,6 @@
            JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects; for example:
            <br>
            <br>
-         </p>
-
             <ul>
               <li>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM). For example, client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.</li>
               <li>Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server. For example, server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.</li>
